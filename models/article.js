@@ -15,6 +15,16 @@ var ArticleSchema = new Schema({
         type: String,
         required: true
     },
+    // summary required in string
+    summary: {
+        type: String,
+        required: true
+    },
+    // adding image in string
+    image: {
+        type: String,
+        required: true
+    },
     // note is the object that stores a Note id
     // links the ObjectId to Note model and allows us to populate the Article with the associated Note
     note: {

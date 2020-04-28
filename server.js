@@ -1,28 +1,16 @@
 var express = require("express");
-var xphbs = require("express-handlebars");
+var exphbs = require("express-handlebars");
 var logger = require("morgan");
 var mongoose = require("mongoose");
 
-// Scraping tools
-var axios = require("axios");
-var cheerio = require("cheerio");
-
-// require models
-var db = require("./models");
-
-var PORT = 3000;
+var PORT =  process.env.PORT || 3000;
 
 // Express Handlebars
 var app = express();
  
-app.engine("handlebars", exphbs());
+app.engine("handlebars", exphbs({defaultLayout:"main"}));
 app.set("view engine", "handlebars");
  
-app.get("/", function (req, res) {
-    res.render("home");
-});
- 
-app.listen(3000);
 
 // Middleware
 app.use(logger("dev"));
@@ -32,7 +20,16 @@ app.use(express.json());
 // Make public a static folder
 app.use(express.static("public"));
 
+var apiRoutes = require("./routes/apiroutes")
+
+apiRoutes(app)
+
 // Connect == Mongo DB
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
 
 mongoose.connect(MONGODB_URI);
+
+
+app.listen(PORT, function(){
+    console.log("app is listening on http://localhost:" + PORT)
+});
