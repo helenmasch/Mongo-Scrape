@@ -2,7 +2,7 @@
 
 ### Overview
 
-A web app that les users view and leave comments on the latest news articles using Mongoose and Cheerio to scrape news from another site. The npm packages include:
+A web app that lets users view and leave comments on the latest news articles using Mongoose and Cheerio to scrape news from another site. The npm packages include:
 
 1. express
 
