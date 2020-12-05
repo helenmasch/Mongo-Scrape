@@ -2,9 +2,11 @@
 
 ### Overview
 
-A web app that lets users view and leave comments on the latest news articles using Mongoose and Cheerio to scrape news from another site. The npm packages include:
+A web application that lets users view and leave comments on the latest news articles using Mongoose and Cheerio to scrape news from another site. The user can leave comments on the articles displayed and view them in their saved database. 
 
-1. express
+Npm packages include:
+
+   1. express
 
    2. express-handlebars
 
@@ -16,7 +18,7 @@ A web app that lets users view and leave comments on the latest news articles us
 
 This code can connect Mongoose to a remote mongolab database otherwise it will connect to the local mongoHeadlines database on your computer.
 
-## Tech Includes:
+## Tech Highlights:
 * NoSQL
 * MongoDB
 * Object-document mapping
